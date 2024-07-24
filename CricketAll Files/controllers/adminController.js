@@ -1,5 +1,6 @@
 const Admin = require('../models/Admin');
 const Player = require('../models/Player'); 
+const Team = require('../models/Team'); 
 
 exports.getAdminLogin = (req, res) => {
   res.render('admin/login');
@@ -24,6 +25,24 @@ exports.postAdminLogin = async (req, res) => {
 exports.getAdminHome = async (req, res) => {
   res.render('admin/home');
 };
+exports.postTeam = async (req, res) => {
+  const teamData = {
+    mngName: req.body.mngName,
+    team: req.body.team,
+    budget: req.body.budget,
+    mobileNo: req.body.mobileNo,
+  };
+  const newTeam = new Team(teamData);
+
+  try {
+    await newTeam.save(); // Save and wait for completion
+    res.redirect('/admin/teamList');
+} catch (err) {
+    console.error('Error saving team data:', err);
+    res.status(500).send('Error saving team data.');
+}
+};
+
 exports.postAdmin = async (req, res) => {
   const playerData = {
       name: req.body.name,
@@ -34,7 +53,6 @@ exports.postAdmin = async (req, res) => {
       allRounder: req.body.allRounder === 'on',
       phoneNumber: req.body.phoneNumber
   };
-
   const newPlayer = new Player(playerData);
 
   try {
@@ -46,11 +64,22 @@ exports.postAdmin = async (req, res) => {
 }
 };
 
+
 exports.getAdminplayerList = async (req, res) => {
   try {
     const players = await Player.find({});
     // const count = players.length; 
     res.render('admin/playerList', { data: players }); // Render the players view with the fetched data
+  } catch (err) {
+    res.status(500).send('Error fetching player data.');
+  }
+};
+
+exports.getTeamList = async (req, res) => {
+  try {
+    const teams = await Team.find({});
+    // const count = players.length; 
+    res.render('admin/teamList', { data: teams }); // Render the players view with the fetched data
   } catch (err) {
     res.status(500).send('Error fetching player data.');
   }
