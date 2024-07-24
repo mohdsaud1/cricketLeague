@@ -1,0 +1,16 @@
+.{
+    margin: 0;
+    padding: 0;
+}    
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    padding-top: ;
+    padding-bottom: ; 
+    
+}
+#bt,#bt1,#bt2{
+    border-radius: 12px ;
+}
