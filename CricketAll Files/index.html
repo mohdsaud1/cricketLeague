@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://as1.ftcdn.net/v2/jpg/08/48/83/06/1000_F_848830688_3a1qIuUWqGNclgNZiLjbSQhee72AJbN3.jpg') no-repeat center center fixed;
+            background-size: cover;
+           
+            position: relative;
+           
+            height: 100vh;
+     
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            
+            z-index: 1;
+      
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+          
+        }
+
+        .fixed-top-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 2;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .fixed-top-container h1 {
+            color: white;
+           
+            margin: 0;
+        }
+
+        .text-right {
+            position: relative;
+            z-index: 2;
+           
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <div class="content">
+        <div class="container-fluid fixed-top-container"
+            style="background: linear-gradient(to bottom right, pink, purple, darkblue);">
+            <h1 class="text-center mt-0">Cricket Auction</h1>
+        </div>
+        <div class="text-right mt-3 mr-3">
+            <a href="/admin-login" class="btn btn-primary">Admin Login</a>
+        </div>
+    </div>
+   
+
+
+   
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+ 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
