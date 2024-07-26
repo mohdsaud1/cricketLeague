@@ -10,24 +10,49 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <!-- <link rel="stylesheet" href="/CSS/home.css"> -->
     <style>
+      
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://media.istockphoto.com/id/1158435344/photo/illuminated-round-cricket-stadium-at-night-with-wooden-wickets-closeup.jpg?s=612x612&w=0&k=20&c=zwqG2jWqQLzaJyWh3dFO6bA2PUP6fyqiU-06BWSdRZ0=') no-repeat center center fixed;
+            background-size: cover;
+           
+            position: relative;
+           
+            height: 100vh;
+     
+        }
+
         .button{
     display: flex;
     justify-content: space-evenly;
     align-items:center;
     padding-top: 100px;
     padding-bottom: 100px; 
+  
 }
+.btn-custom-black {
+            color: white !important;
+            background-color: black !important;
+            border-color: black !important;
+            
+        }
 #bt,#bt1,#bt2{
     border-radius: 12px ;
+
+}
+h2{
+  color:white;
+  text-align:center;
 }
     </style>
     </head>
 
 <body id="by">
-    <h3 style="color: #198754; text-align: center;" >Welcome to Cricket Championship </h3>
+    <h2>Welcome to Cricket Championship </h2>
     
     <div class="button">
-        <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" id="bt">Add Players</button>
+        <button type="button" class="btn btn-custom-black btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" id="bt">Add Players</button>
 
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -75,19 +100,57 @@
             </div>
           </div>
 
-          <a href="/login">  
-        <button type="button" class="btn btn-outline-success btn-lg" id="bt1">Add Team</button>
-       </a>
+          <div class="container mt-5">
+            <div class="button">
+              <button type="button" class="btn btn-custom-black btn-lg" data-bs-toggle="modal"
+                data-bs-target="#exampleModal1" id="bt">Add Team</button>
+            </div>
+    
+            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Team Profile</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form method="post" action="/admin/add-team">
+                      <div class="mb-3">
+                        <label for="mngName" class="col-form-label">Mng. Name:</label>
+                        <input type="text" class="form-control" id="mngName" name="mngName">
+                      </div>
+                      <div class="mb-3">
+                        <label for="team" class="col-form-label">Team:</label>
+                        <input type="text" class="form-control" id="team" name="team">
+                      </div>
+                      <div class="mb-3">
+                        <label for="budget" class="col-form-label">Budget:</label>
+                        <input type="number" class="form-control" id="budget" name="budget">
+                      </div>
+                      <div class="mb-3">
+                        <label for="mobileNo" class="col-form-label">Mobile No:</label>
+                        <input type="number" class="form-control" id="mobileNo" name="mobileNo">
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
         <a href="/admin/conductbidding">
-        <button type="button" class="btn btn-outline-success btn-lg" id="bt2">Conduct Bidding</button>
+        <button type="button" class="btn btn-custom-black btn-lg" id="bt2">Conduct Bidding</button>
         </a>
         <a href="/admin/playerList">
-          <button type="button" class="btn btn-outline-success btn-lg" id="bt1">Players List</button>
+          <button type="button" class="btn btn-custom-black btn-lg" id="bt1">Players List</button>
         </a>
     
-        <a href="#">
-          <button type="button" class="btn btn-outline-success btn-lg" id="bt1">Team List</button>
+        <a href="/admin/teamList">
+          <button type="button" class="btn btn-custom-black btn-lg" id="bt1">Team List</button>
         </a>
 
     </div>
